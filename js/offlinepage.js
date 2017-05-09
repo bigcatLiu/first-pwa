@@ -8,7 +8,7 @@ loaded as a separate ES6 file to ensure it is not parsed by older browsers
 // cache name
 const
   CACHE = '::PWAsite',
-  offlineURL = '/offline/',
+  offlineURL = 'offline/',
   list = document.getElementById('cachedpagelist');
 
 // fetch all caches
