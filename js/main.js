@@ -13,7 +13,14 @@ if (!window.addEventListener || !window.history || !window.requestAnimationFrame
 if ('serviceWorker' in navigator) {
 
   // register service worker
-  navigator.serviceWorker.register('/service-worker.js');
+  var url = '/service-worker.js';
+  if(url){
+  	navigator.serviceWorker.register('/service-worker.js');
+  }else{
+  	navigator.serviceWorker.register('service-worker.js');
+  	
+  }
+
 
   // load script to populate offline page list
   if (document.getElementById('cachedpagelist') && 'caches' in window) {
