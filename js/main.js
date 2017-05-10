@@ -13,7 +13,7 @@ if (!window.addEventListener || !window.history || !window.requestAnimationFrame
 if ('serviceWorker' in navigator) {
 
   // register service worker
-  var currentPages = $("#getPage").val();
+  var currentPages = document.getElementById("getPage").value;
   if(currentPages == 'home'){
   	navigator.serviceWorker.register('service-worker.js');
   }else{
