@@ -13,11 +13,11 @@ if (!window.addEventListener || !window.history || !window.requestAnimationFrame
 if ('serviceWorker' in navigator) {
 
   // register service worker
-  var url = '/service-worker.js';
-  if(url){
-  	navigator.serviceWorker.register('/service-worker.js');
-  }else{
+  var currentPages = $("#getPage").val();
+  if(currentPages == 'home'){
   	navigator.serviceWorker.register('service-worker.js');
+  }else{
+  	navigator.serviceWorker.register('/service-worker.js');
   	
   }
 
