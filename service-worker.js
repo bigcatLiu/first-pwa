@@ -71,7 +71,7 @@ self.addEventListener('install', event => {
 self.addEventListener('activate', event => {
 
   console.log('service worker: activate');
-
+send_message_to_sw('aaa');
 	// delete old caches
   event.waitUntil(
     clearOldCaches()
@@ -156,3 +156,11 @@ self.addEventListener('fetch', event => {
   );
 
 });
+
+self.addEventListener('message', function(event){
+    console.log("SW Received Message: " + event.data);
+    event.ports[0].postMessage("SW Says 'Hello back!'");
+});
+function send_message_to_sw(msg){
+    navigator.serviceWorker.controller.postMessage("Client 1 says '"+msg+"'");
+}
